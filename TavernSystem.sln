@@ -1,12 +1,12 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TavernSystem.API", "TavernSystem.API\TavernSystem.API.csproj", "{D060EE87-FF11-4EC6-9EBB-4DA95468563B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TavernSystem.API", "src\TavernSystem.API\TavernSystem.API.csproj", "{D060EE87-FF11-4EC6-9EBB-4DA95468563B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TavernSystem.Models", "TavernSystem.Models\TavernSystem.Models.csproj", "{78866BC2-0B25-4453-8892-226CB7B17D74}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TavernSystem.Models", "src\TavernSystem.Models\TavernSystem.Models.csproj", "{78866BC2-0B25-4453-8892-226CB7B17D74}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaverSystem.Repositories", "TaverSystem.Repositories\TaverSystem.Repositories.csproj", "{C69DDF41-D8E5-4A83-8116-CB28AAE94BC1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaverSystem.Repositories", "src\TaverSystem.Repositories\TaverSystem.Repositories.csproj", "{C69DDF41-D8E5-4A83-8116-CB28AAE94BC1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TavernSystem.Application", "TavernSystem.Application\TavernSystem.Application.csproj", "{79D98777-B57E-4DD9-A9EC-660886B884B5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TavernSystem.Application", "src\TavernSystem.Application\TavernSystem.Application.csproj", "{79D98777-B57E-4DD9-A9EC-660886B884B5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
