@@ -31,7 +31,7 @@ public class TavernService : ITavernService
     public async Task<bool> AddTravelerAsync(AdventurerDTO request)
     {
         if (request == null || request.Nickname.IsNullOrEmpty() ||
-            request.ExperienceId < 1 || request.RacerId < 1)
+            request.ExperienceId < 1 || request.RaceId < 1)
             return false;
 
         var result = await _tavernRepository.AddAdventurerAsync(request);

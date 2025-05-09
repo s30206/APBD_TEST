@@ -111,7 +111,35 @@ public class TavernRepository : ITavernRepository
             var transaction = conn.BeginTransaction();
             try
             {
-                return true;
+                var queryMax = "select coalesce(max(id), 0) from Adventurer";
+
+                int id = -1;
+                
+                using (var cmd = new SqlCommand(queryMax, conn, transaction))
+                {
+                    var reader = await cmd.ExecuteReaderAsync();
+                    await reader.ReadAsync();
+                    id = reader.GetInt32(0) + 1;
+                    await reader.CloseAsync();
+                }
+                
+                var queryInsert = "INSERT INTO ADVENTURER (Id, Nickname, RaceId, ExperienceId, PersonId) values (@Id, @Nickname, @RaceId, @ExperienceId, @PersonId)";
+
+                using (var cmd = new SqlCommand(queryInsert, conn, transaction))
+                {
+                    cmd.Parameters.AddWithValue("@Id", id);
+                    cmd.Parameters.AddWithValue("@Nickname", request.Nickname);
+                    cmd.Parameters.AddWithValue("@RaceId", request.RaceId);
+                    cmd.Parameters.AddWithValue("@ExperienceId", request.ExperienceId);
+                    cmd.Parameters.AddWithValue("PersonId", request.PersonDataId);
+                    
+                    var result = await cmd.ExecuteNonQueryAsync();
+                    if (result == 0)
+                        throw new Exception("No records were affected.");
+                    
+                    transaction.Commit();
+                    return true;
+                }
             }
             catch (Exception ex)
             {
