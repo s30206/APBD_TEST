@@ -83,9 +83,8 @@ public class TavernRepository : ITavernRepository
                             ExperienceLevel = reader.GetString(3),
                             PersonData = new
                             {
-                                Id = reader.GetInt32(4),
+                                Id = reader.GetString(4),
                                 FirstName = reader.GetString(5),
-                                MiddleName = reader.GetString(6),
                                 LastName = reader.GetString(7),
                                 HasBounty = reader.GetBoolean(8),
                             }
@@ -130,7 +129,7 @@ public class TavernRepository : ITavernRepository
                     cmd.Parameters.AddWithValue("@Id", id);
                     cmd.Parameters.AddWithValue("@Nickname", request.Nickname);
                     cmd.Parameters.AddWithValue("@RaceId", request.RaceId);
-                    cmd.Parameters.AddWithValue("@ExperienceId", request.ExperienceId);
+                    cmd.Parameters.AddWithValue("@ExperienceId", request.ExperienceLevelId);
                     cmd.Parameters.AddWithValue("PersonId", request.PersonDataId);
                     
                     var result = await cmd.ExecuteNonQueryAsync();
